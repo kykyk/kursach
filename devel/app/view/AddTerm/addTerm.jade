@@ -1,0 +1,19 @@
+div.container-fluid
+    div.row
+        div.formData
+            div(ng-repeat="newTerm in newTerms")
+                h2.number-term(ng-if='newTerms.length > 1') Term №{{$index+1}}
+
+                div.form-group-lg
+                    label(for='name-term{{$index}}') Name term:
+                    input(id='name-term{{$index}}' type='text' placeholder='Input name term' ng-model='newTerm.name' required)
+
+                div.form-group-lg
+                    label(for='description-term{{$index}}') Description term:
+                    textarea(id='description-term{{$index}}' placeholder='Input description term' ng-model='newTerm.description' rows=7 required)
+
+                div: a.button-remove(href='' ng-click='delTerm($index)') Delete term
+
+            div.twoButtons
+                a.button-one.button-other(href='' ng-click='addTerm()') Add term
+                a.button-two.button-submit(href='' ng-click='sendTerms()') Success

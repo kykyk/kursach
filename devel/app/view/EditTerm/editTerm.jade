@@ -1,0 +1,12 @@
+div.container-fluid
+    div.row
+        form.formData(ng-submit='sendTerm()')
+            div.form-group-lg
+                label(for='name-term') Name term:
+                input(id='name-term' type='text' ng-model='term.name' required)
+            div.form-group-lg
+                label(for='description-term') Description term:
+                textarea(id='description-term' ng-model='term.description' rows=7 required)
+            div.twoButtons
+                button.button-one.button-submit(type='submit') Success
+                a.button-two.button-remove(href='' ng-click='delTerm()') Delete

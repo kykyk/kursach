@@ -1,0 +1,14 @@
+
+<div>
+  <form name="login" ng-submit="signIn()" class="form-signin">
+    <h2 class="form-signin-heading">Please sign in</h2>
+    <label for="inputEmail">Email address</label>
+    <input id="inputEmail" type="email" placeholder="Email" ng-model="email" required="required" autofocus="autofocus" class="form-control"/>
+    <label for="inputPassword">Password</label>
+    <input id="inputPassword" type="password" placeholder="Password" ng-model="passwd" required="required" class="form-control"/>
+    <button action="submit" ng-disabled="!email || !passwd" class="button-signin">Sign In</button><a href="#/" class="button-signin-cancel">Go home</a>
+  </form>
+  <div ng-show="showNotify" class="show-error">
+    <div ng-bind="showNotify" class="messg"></div>
+  </div>
+</div>

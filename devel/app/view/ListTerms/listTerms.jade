@@ -1,0 +1,14 @@
+div.terms(ng-repeat='term in terms | filter:search')
+
+    div.term
+        h2.term-name(ng-bind='term.name')
+        p: pre(ng-if='formatText[$index]' ng-bind='term.description')
+        p(ng-if='!formatText[$index]' ng-bind='term.description')
+        div.term-fucntion
+            div.format-text
+                label(for='checkFormat{{$index}}')
+                    input(id='checkFormat{{$index}}' type='checkbox' ng-model='formatText[$index]' checked='checked')
+                    | Formatted text
+            div.button-edit
+                a(href='#/edit/{{term.$id}}' ng-if='term.userId === userID') Edit
+

@@ -1,0 +1,20 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="formData">
+      <div ng-repeat="newTerm in newTerms">
+        <h2 ng-if="newTerms.length &gt; 1" class="number-term">Term №{{$index+1}}</h2>
+        <div class="form-group-lg">
+          <label for="name-term{{$index}}">Name term:</label>
+          <input id="name-term{{$index}}" type="text" placeholder="Input name term" ng-model="newTerm.name" required="required"/>
+        </div>
+        <div class="form-group-lg">
+          <label for="description-term{{$index}}">Description term:</label>
+          <textarea id="description-term{{$index}}" placeholder="Input description term" ng-model="newTerm.description" rows="7" required="required"></textarea>
+        </div>
+        <div><a href="" ng-click="delTerm($index)" class="button-remove">Delete term</a></div>
+      </div>
+      <div class="twoButtons"><a href="" ng-click="addTerm()" class="button-one button-other">Add term</a><a href="" ng-click="sendTerms()" class="button-two button-submit">Success</a></div>
+    </div>
+  </div>
+</div>

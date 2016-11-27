@@ -1,0 +1,12 @@
+div
+    form.form-signin(name='login' ng-submit='signIn()')
+        h2.form-signin-heading Please sign in
+        label(for="inputEmail") Email address
+        input.form-control(id='inputEmail' type='email' placeholder='Email' ng-model='email' required autofocus)
+        label(for="inputPassword") Password
+        input.form-control(id='inputPassword' type='password' placeholder='Password' ng-model='passwd' required)
+        button.button-signin(action='submit' ng-disabled='!email || !passwd') Sign In
+        a.button-signin-cancel(href="#/" ) Go home
+
+    div.show-error(ng-show='showNotify')
+        div.messg(ng-bind='showNotify')

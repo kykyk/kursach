@@ -1,0 +1,26 @@
+nav.menuNav
+    div.navbar-header
+        button.navbar-toggle(type='button' data-toggle='collapse' data-target='#menu')
+            span.sr-only Open menu
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+
+    div.collapse.navbar-collapse(id='menu')
+        ul
+            li(ng-class='{active: activeNav() == "/"}')
+                a(href='#/') Home
+            li(ng-class='{active: activeNav() == "/add"}')
+                a(href='#/add') Add
+
+        form.navbar-right
+            input(type='text' ng-change='goSearch()' ng-model='searchMain' placeholder='Search')
+
+
+        ul.navbar-right
+            li(ng-class='{active:activeNav() == "/login"}')
+                a(href='#/login' ng-show='!login') Login
+            li: a(href='' ng-show='login' ng-click='auth.logout()') Logout
+
+        div.navbar-right: span.navbar-brand(ng-bind='user')

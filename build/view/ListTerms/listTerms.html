@@ -1,0 +1,18 @@
+
+<div ng-repeat="term in terms | filter:search" class="terms">
+  <div class="term">
+    <h2 ng-bind="term.name" class="term-name"></h2>
+    <p>
+      <pre ng-if="formatText[$index]" ng-bind="term.description"></pre>
+    </p>
+    <p ng-if="!formatText[$index]" ng-bind="term.description"></p>
+    <div class="term-fucntion">
+      <div class="format-text">
+        <label for="checkFormat{{$index}}">
+          <input id="checkFormat{{$index}}" type="checkbox" ng-model="formatText[$index]" checked="checked"/>Formatted text
+        </label>
+      </div>
+      <div class="button-edit"><a href="#/edit/{{term.$id}}" ng-if="term.userId === userID">Edit</a></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <form ng-submit="sendTerm()" class="formData">
+      <div class="form-group-lg">
+        <label for="name-term">Name term:</label>
+        <input id="name-term" type="text" ng-model="term.name" required="required"/>
+      </div>
+      <div class="form-group-lg">
+        <label for="description-term">Description term:</label>
+        <textarea id="description-term" ng-model="term.description" rows="7" required="required"></textarea>
+      </div>
+      <div class="twoButtons">
+        <button type="submit" class="button-one button-submit">Success</button><a href="" ng-click="delTerm()" class="button-two button-remove">Delete</a>
+      </div>
+    </form>
+  </div>
+</div>
